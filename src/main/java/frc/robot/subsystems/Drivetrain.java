@@ -24,49 +24,49 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class Drivetrain implements BaseSwerveDrive {
     @Log(groups = "modules")
     private NEOCoaxialSwerveModule frontLeft = new NEOCoaxialSwerveModule(
-            FRONT_LEFT_DRIVE_MOTOR_ID,
-            FRONT_LEFT_STEER_MOTOR_ID,
-            FRONT_LEFT_STEER_ENCODER_ID,
+            FrontLeft.DRIVE_MOTOR_ID,
+            FrontLeft.STEER_MOTOR_ID,
+            FrontLeft.STEER_ENCODER_ID,
             false,
             false,
             false,
-            FRONT_LEFT_OFFSET,
+            FrontLeft.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
     /** The front right swerve module when looking at the bot from behind. */
     @Log(groups = "modules")
     private NEOCoaxialSwerveModule frontRight = new NEOCoaxialSwerveModule(
-            FRONT_RIGHT_DRIVE_MOTOR_ID,
-            FRONT_RIGHT_STEER_MOTOR_ID,
-            FRONT_RIGHT_STEER_ENCODER_ID,
+            FrontRight.DRIVE_MOTOR_ID,
+            FrontRight.STEER_MOTOR_ID,
+            FrontRight.STEER_ENCODER_ID,
             false,
             false,
             false,
-            FRONT_RIGHT_OFFSET,
+            FrontRight.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
     /** The back left swerve module when looking at the bot from behind. */
     @Log(groups = "modules")
     private NEOCoaxialSwerveModule backLeft = new NEOCoaxialSwerveModule(
-            BACK_LEFT_DRIVE_MOTOR_ID,
-            BACK_LEFT_STEER_MOTOR_ID,
-            BACK_LEFT_STEER_ENCODER_ID,
+            BackLeft.DRIVE_MOTOR_ID,
+            BackLeft.STEER_MOTOR_ID,
+            BackLeft.STEER_ENCODER_ID,
             false,
             false,
             false,
-            BACK_LEFT_OFFSET,
+            BackLeft.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
     /** The back right swerve module when looking at the bot from behind. */
     @Log(groups = "modules")
     private NEOCoaxialSwerveModule backRight = new NEOCoaxialSwerveModule(
-            BACK_RIGHT_DRIVE_MOTOR_ID,
-            BACK_RIGHT_STEER_MOTOR_ID,
-            BACK_RIGHT_STEER_ENCODER_ID,
+            BackRight.DRIVE_MOTOR_ID,
+            BackRight.STEER_MOTOR_ID,
+            BackRight.STEER_ENCODER_ID,
             false,
             false,
             false,
-            BACK_RIGHT_OFFSET,
+            BackRight.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
     @Override
