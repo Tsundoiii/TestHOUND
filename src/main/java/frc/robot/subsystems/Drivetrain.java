@@ -69,10 +69,11 @@ public class Drivetrain implements BaseSwerveDrive {
             BackRight.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
+    private DriveMode driveMode = DriveMode.FIELD_ORIENTED;
+
     @Override
     public DriveMode getDriveMode() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getDriveMode'");
+        return driveMode;
     }
 
     @Override
