@@ -5,10 +5,10 @@ import static frc.robot.Constants.Drivetrain.*;
 import java.util.function.DoubleSupplier;
 import java.util.function.Supplier;
 
+import com.pathplanner.lib.path.PathConstraints;
+import com.pathplanner.lib.path.PathPlannerPath;
 import com.techhounds.houndutil.houndlib.MotorHoldMode;
 import com.techhounds.houndutil.houndlib.subsystems.BaseSwerveDrive;
-import com.techhounds.houndutil.houndlib.subsystems.PathConstraints;
-import com.techhounds.houndutil.houndlib.subsystems.PathPlannerPath;
 import com.techhounds.houndutil.houndlib.swerve.NEOCoaxialSwerveModule;
 import com.techhounds.houndutil.houndlog.interfaces.Log;
 
