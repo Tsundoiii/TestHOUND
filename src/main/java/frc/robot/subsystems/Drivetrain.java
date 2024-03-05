@@ -5,6 +5,7 @@ import static frc.robot.Constants.Drivetrain.*;
 import java.util.function.DoubleSupplier;
 import java.util.function.Supplier;
 
+import com.kauailabs.navx.frc.AHRS;
 import com.pathplanner.lib.path.PathConstraints;
 import com.pathplanner.lib.path.PathPlannerPath;
 import com.techhounds.houndutil.houndlib.MotorHoldMode;
@@ -19,9 +20,11 @@ import edu.wpi.first.math.geometry.Transform2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class Drivetrain implements BaseSwerveDrive {
+public class Drivetrain extends SubsystemBase implements BaseSwerveDrive {
     @Log(groups = "modules")
     private NEOCoaxialSwerveModule frontLeft = new NEOCoaxialSwerveModule(
             FrontLeft.DRIVE_MOTOR_ID,
@@ -68,6 +71,8 @@ public class Drivetrain implements BaseSwerveDrive {
             BackRight.STEER_ENCODER_INVERTED,
             BackRight.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
+
+    private AHRS gyro = new AHRS(SPI.Port.kMXP);
 
     private DriveMode driveMode = DriveMode.FIELD_ORIENTED;
 
@@ -126,8 +131,7 @@ public class Drivetrain implements BaseSwerveDrive {
 
     @Override
     public void resetGyro() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'resetGyro'");
+        gyro.reset();
     }
 
     @Override
@@ -235,8 +239,7 @@ public class Drivetrain implements BaseSwerveDrive {
 
     @Override
     public Command resetGyroCommand() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'resetGyroCommand'");
+        return runOnce(() -> resetGyro());
     }
 
     @Override
