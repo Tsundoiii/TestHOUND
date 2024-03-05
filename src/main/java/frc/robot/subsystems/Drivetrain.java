@@ -27,9 +27,9 @@ public class Drivetrain implements BaseSwerveDrive {
             FrontLeft.DRIVE_MOTOR_ID,
             FrontLeft.STEER_MOTOR_ID,
             FrontLeft.STEER_ENCODER_ID,
-            false,
-            false,
-            false,
+            FrontLeft.DRIVE_MOTOR_INVERTED,
+            FrontLeft.STEER_MOTOR_INVERTED,
+            FrontLeft.STEER_ENCODER_INVERTED,
             FrontLeft.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
@@ -39,9 +39,9 @@ public class Drivetrain implements BaseSwerveDrive {
             FrontRight.DRIVE_MOTOR_ID,
             FrontRight.STEER_MOTOR_ID,
             FrontRight.STEER_ENCODER_ID,
-            false,
-            false,
-            false,
+            FrontRight.DRIVE_MOTOR_INVERTED,
+            FrontRight.STEER_MOTOR_INVERTED,
+            FrontRight.STEER_ENCODER_INVERTED,
             FrontRight.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
@@ -51,9 +51,9 @@ public class Drivetrain implements BaseSwerveDrive {
             BackLeft.DRIVE_MOTOR_ID,
             BackLeft.STEER_MOTOR_ID,
             BackLeft.STEER_ENCODER_ID,
-            false,
-            false,
-            false,
+            BackLeft.DRIVE_MOTOR_INVERTED,
+            BackLeft.STEER_MOTOR_INVERTED,
+            BackLeft.STEER_ENCODER_INVERTED,
             BackLeft.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
@@ -63,9 +63,9 @@ public class Drivetrain implements BaseSwerveDrive {
             BackRight.DRIVE_MOTOR_ID,
             BackRight.STEER_MOTOR_ID,
             BackRight.STEER_ENCODER_ID,
-            false,
-            false,
-            false,
+            BackRight.DRIVE_MOTOR_INVERTED,
+            BackRight.STEER_MOTOR_INVERTED,
+            BackRight.STEER_ENCODER_INVERTED,
             BackRight.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
