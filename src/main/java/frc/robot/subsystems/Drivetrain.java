@@ -92,8 +92,7 @@ public class Drivetrain extends SubsystemBase implements BaseSwerveDrive {
 
     @Override
     public Rotation2d getRotation() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getRotation'");
+        return gyro.getRotation2d();
     }
 
     @Override
