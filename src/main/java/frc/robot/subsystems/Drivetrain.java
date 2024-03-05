@@ -72,6 +72,9 @@ public class Drivetrain extends SubsystemBase implements BaseSwerveDrive {
             BackRight.MAGNET_OFFSET,
             SWERVE_CONSTANTS);
 
+    private SwerveModuleState[] commandedModuleStates = new SwerveModuleState[] { new SwerveModuleState(),
+            new SwerveModuleState(), new SwerveModuleState(), new SwerveModuleState() };
+
     private AHRS gyro = new AHRS(SPI.Port.kMXP);
 
     private DriveMode driveMode = DriveMode.FIELD_ORIENTED;
@@ -95,14 +98,22 @@ public class Drivetrain extends SubsystemBase implements BaseSwerveDrive {
 
     @Override
     public SwerveModulePosition[] getModulePositions() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getModulePositions'");
+        return new SwerveModulePosition[] {
+                frontLeft.getPosition(),
+                frontRight.getPosition(),
+                backLeft.getPosition(),
+                backRight.getPosition()
+        };
     }
 
     @Override
     public SwerveModuleState[] getModuleStates() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getModuleStates'");
+        return new SwerveModuleState[] {
+                frontLeft.getState(),
+                frontRight.getState(),
+                backLeft.getState(),
+                backRight.getState()
+        };
     }
 
     @Override
