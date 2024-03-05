@@ -233,8 +233,7 @@ public class Drivetrain extends SubsystemBase implements BaseSwerveDrive {
 
     @Override
     public Command setDriveModeCommand(DriveMode driveMode) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setDriveModeCommand'");
+        return runOnce(() -> this.driveMode = driveMode);
     }
 
     @Override
