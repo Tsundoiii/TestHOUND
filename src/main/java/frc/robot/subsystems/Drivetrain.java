@@ -25,6 +25,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase implements BaseSwerveDrive {
+    /** The front left swerve module when looking at the bot from behind. */
     @Log(groups = "modules")
     private NEOCoaxialSwerveModule frontLeft = new NEOCoaxialSwerveModule(
             FrontLeft.DRIVE_MOTOR_ID,
