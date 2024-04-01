@@ -201,7 +201,7 @@ public class Drivetrain extends SubsystemBase implements BaseSwerveDrive {
     }
 
     @Override
-    public Command controlledRotateCommand(DoubleSupplier angle, DriveMode driveMode) {
+    public Command controlledRotateCommand(DoubleSupplier angle) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'controlledRotateCommand'");
     }
