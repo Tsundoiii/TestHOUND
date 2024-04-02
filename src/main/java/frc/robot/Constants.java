@@ -2,7 +2,11 @@ package frc.robot;
 
 import com.techhounds.houndutil.houndlib.swerve.CoaxialSwerveModule.SwerveConstants;
 
+import edu.wpi.first.math.geometry.Transform2d;
+import edu.wpi.first.math.geometry.Translation2d;
+import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.system.plant.DCMotor;
+import edu.wpi.first.math.util.Units;
 
 public class Constants {
     public static final class Drivetrain {
@@ -86,5 +90,18 @@ public class Constants {
             SWERVE_CONSTANTS.DRIVE_MOI = 0.04;
             SWERVE_CONSTANTS.STEER_MOI = 0.025;
         }
+
+        /** Distance between left and right wheels. */
+        public static final double TRACK_WIDTH = Units.inchesToMeters(22.75);
+        /** Distance between front and back wheels. */
+        public static final double WHEEL_BASE = Units.inchesToMeters(22.75);
+        public static final Translation2d[] SWERVE_DRIVE_LOCATIONS = new Translation2d[] {
+                new Translation2d(WHEEL_BASE / 2, TRACK_WIDTH / 2),
+                new Translation2d(WHEEL_BASE / 2, -TRACK_WIDTH / 2),
+                new Translation2d(-WHEEL_BASE / 2, TRACK_WIDTH / 2),
+                new Translation2d(-WHEEL_BASE / 2, -TRACK_WIDTH / 2)
+        };
+        public static final SwerveDriveKinematics KINEMATICS = new SwerveDriveKinematics(SWERVE_DRIVE_LOCATIONS[0],
+                SWERVE_DRIVE_LOCATIONS[1], SWERVE_DRIVE_LOCATIONS[2], SWERVE_DRIVE_LOCATIONS[3]);
     }
 }
